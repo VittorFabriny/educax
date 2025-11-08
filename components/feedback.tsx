@@ -1,0 +1,44 @@
+import { SectionCards } from './section-cards';
+
+import { Star } from 'lucide-react';
+
+export function Feedback() {
+  return (
+    <main className="w-full py-20 bg-[var(--color-bg-alt)]/50">
+      <div className="px-20 flex flex-col items-center gap-8">
+        <div className="flex flex-col text-center gap-4">
+          <h1 className="font-3xl lg:text-4xl font-bold font-poppins">O que nossos alunos dizem</h1>
+          <p>Histórias reais de transformação profissional</p>
+        </div>
+
+        <div className="flex gap-8">
+          <SectionCards
+            variant="feedback"
+            icon={Star}
+            description='"Graças à plataforma consegui um emprego na área de tecnologia em 3 meses. Os cursos são muito práticos e atualizados."'
+            user="Ana Silva"
+            userRole="Desenvolvedora Front-end"
+            userImageUrl="/professional-woman-smiling-headshot.png"
+            classname="leading-relaxed"
+          />
+          <SectionCards
+            variant="feedback"
+            icon={Star}
+            description='"Graças à plataforma consegui um emprego na área de tecnologia em 3 meses. Os cursos são muito práticos e atualizados."'
+            user="Ana Silva"
+            userRole="Desenvolvedora Front-end"
+            userImageUrl="/professional-woman-smiling-headshot.png"
+          />
+          <SectionCards
+            variant="feedback"
+            icon={Star}
+            description='"Graças à plataforma consegui um emprego na área de tecnologia em 3 meses. Os cursos são muito práticos e atualizados."'
+            user="Ana Silva"
+            userRole="Desenvolvedora Front-end"
+            userImageUrl="/professional-woman-smiling-headshot.png"
+          />
+        </div>
+      </div>
+    </main>
+  );
+}

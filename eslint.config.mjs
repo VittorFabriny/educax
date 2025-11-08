@@ -1,18 +1,39 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import js from "@eslint/js";
+import prettier from "eslint-config-prettier";
+import prettierPlugin from "eslint-plugin-prettier";
+import tseslint from "typescript-eslint";
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-]);
+export default [
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  prettier,
+  {
+    plugins: {
+      prettier: prettierPlugin,
+    },
+    rules: {
+      // Regras de formatação (Prettier)
+      "prettier/prettier": [
+        "error",
+        {
+          singleQuote: true,
+          semi: true,
+          tabWidth: 2,
+          trailingComma: "es5",
+          printWidth: 100,
+        },
+      ],
 
-export default eslintConfig;
+      // Regras adicionais úteis para TS
+      "@typescript-eslint/no-unused-vars": ["warn"],
+      "@typescript-eslint/explicit-function-return-type": "off",
+    },
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: "./tsconfig.json",
+        tsconfigRootDir: import.meta.dirname,
+      },
+    },
+  },
+];
