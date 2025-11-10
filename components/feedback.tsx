@@ -14,7 +14,7 @@ export function Feedback() {
         <div className="flex gap-8">
           <SectionCards
             variant="feedback"
-            icon={Star}
+            rating={5}
             description='"Graças à plataforma consegui um emprego na área de tecnologia em 3 meses. Os cursos são muito práticos e atualizados."'
             user="Ana Silva"
             userRole="Desenvolvedora Front-end"
@@ -23,19 +23,19 @@ export function Feedback() {
           />
           <SectionCards
             variant="feedback"
-            icon={Star}
+            rating={5}
             description='"Graças à plataforma consegui um emprego na área de tecnologia em 3 meses. Os cursos são muito práticos e atualizados."'
-            user="Ana Silva"
-            userRole="Desenvolvedora Front-end"
-            userImageUrl="/professional-woman-smiling-headshot.png"
+            user="Carlos Santos"
+            userRole="Data Scientist"
+            userImageUrl="/professional-man-smiling-headshot.png"
           />
           <SectionCards
             variant="feedback"
-            icon={Star}
+            rating={5}
             description='"Graças à plataforma consegui um emprego na área de tecnologia em 3 meses. Os cursos são muito práticos e atualizados."'
-            user="Ana Silva"
-            userRole="Desenvolvedora Front-end"
-            userImageUrl="/professional-woman-smiling-headshot.png"
+            user="Mariana Costa"
+            userRole="UX Designer"
+            userImageUrl="/professional-woman-designer-smiling-headshot.jpg"
           />
         </div>
       </div>

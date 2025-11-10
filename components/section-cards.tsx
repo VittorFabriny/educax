@@ -54,7 +54,7 @@ export function SectionCards(props: CardProps) {
 
             <div className="flex items-center justify-between mt-6">
               <span className="text-2xl font-bold text-[var(--primary-color)]">{props.price}</span>
-              <Button title="Saiba mais" />
+              <Button variant="primary" title="Saiba mais" />
             </div>
           </section>
         </div>
@@ -62,9 +62,31 @@ export function SectionCards(props: CardProps) {
 
       {props.variant === 'feedback' && (
         <div className="h-full shadow-2xl rounded-xl">
-          <section className="flex flex-col p-8 gap-8">
-            <div>{props.icon}</div>
+          <section className="flex flex-col p-8 gap-10">
+            <div className="flex space-x-1 pt-10">
+              {[...Array(props.rating)].map((_, i) => (
+                <Star
+                  key={i}
+                  className="h-5 w-5 fill-[var(--color-accent)] text-[var(--color-accent)]"
+                />
+              ))}
+            </div>
             <p className="text-sm">{props.description}</p>
+            <div className="flex items-centers gap-4 mt-6">
+              <div>
+                <Image
+                  src={props.userImageUrl!}
+                  alt={props.user!}
+                  width={48}
+                  height={48}
+                  className="w-12 h-12 rounded-full object-cover mb-4"
+                />
+              </div>
+              <div>
+                <h1>{props.user}</h1>
+                <p>{props.userRole}</p>
+              </div>
+            </div>
           </section>
         </div>
       )}

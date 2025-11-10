@@ -4,7 +4,7 @@ import { Button } from './button';
 export function HeroSection() {
   return (
     <main className="mx-20 my-20 bg-[var(--color-bg)]">
-      <div className="sectionwrapper flex flex-row items-center justify-center gap-20">
+      <div className="sectionwrapper flex flex-col items-center justify-center gap-20 md:flex-row">
         <section className="flex flex-col gap-6 pt-20">
           <h1 className="text-4xl font-bold font-poppins max-w-200 lg:text-6xl leading-tight ">
             Aprenda de qualquer lugar com os{' '}
@@ -14,8 +14,8 @@ export function HeroSection() {
             Domine novas habilidades no seu ritmo, com suporte de especialistas.
           </p>
           <div className="flex gap-4">
-            <Button title="Comece agora grátis" />
-            <Button title="Ver demonstração" />
+            <Button variant="primary" title="Comece agora grátis" />
+            <Button variant="secondary" title="Ver demonstração" />
           </div>
 
           <div className="flex items-center gap-10 mt-4">
