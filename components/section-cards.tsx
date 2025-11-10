@@ -63,16 +63,13 @@ export function SectionCards(props: CardProps) {
       {props.variant === 'feedback' && (
         <div className="h-full shadow-2xl rounded-xl">
           <section className="flex flex-col p-8 gap-10">
-            <div className="flex space-x-1 pt-10">
+            <div className="flex space-x-1">
               {[...Array(props.rating)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="h-5 w-5 fill-[var(--color-accent)] text-[var(--color-accent)]"
-                />
+                <Star key={i} className="h-5 w-5 fill-[var(--color-accent)] text-[var(--color-accent)]" />
               ))}
             </div>
             <p className="text-sm">{props.description}</p>
-            <div className="flex items-centers gap-4 mt-6">
+            <div className='flex items-centers gap-4 mt-6'>
               <div>
                 <Image
                   src={props.userImageUrl!}
@@ -83,7 +80,9 @@ export function SectionCards(props: CardProps) {
                 />
               </div>
               <div>
-                <h1>{props.user}</h1>
+                <h1>
+                  {props.user}
+                </h1>
                 <p>{props.userRole}</p>
               </div>
             </div>
