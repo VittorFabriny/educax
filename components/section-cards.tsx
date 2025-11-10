@@ -54,7 +54,7 @@ export function SectionCards(props: CardProps) {
 
             <div className="flex items-center justify-between mt-6">
               <span className="text-2xl font-bold text-[var(--primary-color)]">{props.price}</span>
-              <Button title="Saiba mais" />
+              <Button variant="primary" title="Saiba mais" />
             </div>
           </section>
         </div>

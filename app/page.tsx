@@ -4,6 +4,8 @@ import { HeroSection } from '../components/hero-section';
 import { HowItWorks } from '../components/how-it-works';
 import { Popular } from '../components/popular';
 import { CallToAction } from '../components/call-to-action';
+import { Footer } from '../components/footer';
+
 export default function Home() {
   return (
     <div className="box-border">
@@ -13,6 +15,7 @@ export default function Home() {
       <Popular />
       <Feedback />
       <CallToAction />
+      <Footer />
     </div>
   );
 }
