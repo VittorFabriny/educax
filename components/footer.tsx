@@ -62,7 +62,7 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="p-5 flex items-center justify-center lg:justify-between lg:px-20 text-center lg:text-start  text-white/40 border-t border-white/40">
+      <div className="p-5 lg:px-20 flex items-center justify-center lg:justify-between  text-center lg:text-start  text-white/40 border-t border-white/40">
         <p className="">© 2025 EducaX. Todos os direitos reservados.</p>
 
         <ul className="hidden lg:flex items-center gap-4">

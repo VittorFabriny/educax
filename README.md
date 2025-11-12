@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧩 Nome do Projeto
 
-## Getting Started
+Esta aplicação ainda está em desenvolvimento e atualmente se encontra em uma fase **estática / hardcoded** — ou seja, algumas funcionalidades ainda não estão conectadas ao backend e servem apenas como base visual e estrutural do projeto.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚧 Status do Projeto
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+> **Em desenvolvimento**  
+> A estrutura inicial e componentes principais estão sendo implementados.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tecnologias Utilizadas
 
-## Learn More
+O projeto está sendo desenvolvido com as seguintes tecnologias:
 
-To learn more about Next.js, take a look at the following resources:
+- ⚛️ **React**
+- 🔷 **TypeScript**
+- 🌐 **Next.js**
+- 🟢 **Node.js**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧪 Testar a Aplicação
 
-## Deploy on Vercel
+Você pode acessar a aplicação clicando no link abaixo:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+👉 [**Testar aplicação**](https://educax-psi.vercel.app/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📌 Sobre
+
+Este é um **projeto fictício**, criado com o propósito de **ilustrar a estrutura e o design de uma aplicação moderna voltada para o ramo de ensino**.  
+A proposta é simular o ambiente digital de uma empresa educacional, explorando tecnologias amplamente utilizadas no mercado atual, bem como práticas modernas de desenvolvimento frontend e backend.
+
+Além do aspecto visual e conceitual, este projeto tem como objetivo o aprimoramento técnico e organizacional do desenvolvimento, buscando cumprir as seguintes metas:
+
+- 🎨 **Criar um design consistente e responsivo**.  
+- ⚙️ **Estruturar componentes de forma reutilizável e tipada**.  
+- 🚀 **Preparar a base para futura integração com APIs e banco de dados**.  
+- 🧱 **Adotar boas práticas de arquitetura e versionamento**.  

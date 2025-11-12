@@ -9,7 +9,7 @@ export function Feedback() {
           <p>Histórias reais de transformação profissional</p>
         </div>
 
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col md:flex-row gap-8">
           <SectionCards
             variant="feedback"
             rating={5}
