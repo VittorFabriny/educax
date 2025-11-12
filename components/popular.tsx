@@ -2,13 +2,13 @@ import { SectionCards } from './section-cards';
 
 export function Popular() {
   return (
-    <main className="px-20 py-20 bg-[var(--color-bg-color)]">
+    <main className="p-5 md:px-20 py-20 bg-(--color-bg-color)">
       <section className="flex flex-col align-center text-center gap-4 ">
         <h1 className="text-3xl lg:text-4xl font-bold">Cursos em Destaque</h1>
         <p>Os Cursos mais procurados pelos nossos alunos</p>
       </section>
 
-      <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
         <SectionCards
           variant="popular"
           title="Desenvolvimento Web Completo"
