@@ -8,7 +8,7 @@ export function Popular() {
         <p>Os Cursos mais procurados pelos nossos alunos</p>
       </section>
 
-      <section className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+      <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <SectionCards
           variant="popular"
           title="Desenvolvimento Web Completo"

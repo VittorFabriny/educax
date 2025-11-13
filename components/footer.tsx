@@ -47,18 +47,18 @@ export function Footer() {
 
           <ul className="flex flex-col gap-2 mb-8 text-white/70">
             <span className="text-white font-bold">Empresa</span>
-            <li>Cursos</li>
-            <li>Professores</li>
-            <li>Certificados</li>
-            <li>Preços</li>
+            <li>Sobre nós</li>
+            <li>Carreiras</li>
+            <li>Blog</li>
+            <li>Imprensa</li>
           </ul>
 
           <ul className="flex flex-col gap-2 mb-8 text-white/70">
             <span className="text-white font-bold">Suporte</span>
-            <li>Cursos</li>
-            <li>Professores</li>
-            <li>Certificados</li>
-            <li>Preços</li>
+            <li>Central de Ajuda</li>
+            <li>Contato</li>
+            <li>Status</li>
+            <li>Comunidade</li>
           </ul>
         </div>
       </div>
