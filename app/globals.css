@@ -3,7 +3,7 @@
 :root {
   --primary-color: oklch(55% 0.15 264);
   --secondary-color: oklch(78% 0.14 180);
-  --color-accent: oklch(88% 0.17 95);
+  --color-accent: oklch(0.8 0.15 85);
 
   --color-bg: oklch(100% 0 0);
   --color-bg-secondary: oklch(92% 0 0);

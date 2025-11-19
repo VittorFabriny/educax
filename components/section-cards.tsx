@@ -18,7 +18,6 @@ type CardProps = {
   user?: string;
   userImageUrl?: string;
   userRole?: string;
-  icon?: React.ElementType;
 };
 
 export function SectionCards(props: CardProps) {
