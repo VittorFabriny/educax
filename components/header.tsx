@@ -29,8 +29,8 @@ export function Header() {
       </nav>
 
       <div className="flex gap-4 items-center">
-        <Button variant="secondary" title="Login" />
-        <Button variant="primary" title="Cadastrar" />
+        <Button href='/login' variant="secondary" title="Login" />
+        <Button href='/signin' variant="primary" title="Cadastrar" />
       </div>
     </header>
   );

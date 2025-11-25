@@ -1,38 +1,40 @@
-// Logo [-]
-// Label
-// Input
-// Button [-]
-// Borderless Button
-
 import Link from 'next/link';
 
 import { Logo } from '../../components/logo';
 import { Input } from '../../components/input';
 import { Button } from '../../components/button';
+import { Checkbox } from '../../components/checkbox';
 
-type loginProps = {};
+import { CheckIcon } from 'lucide-react'
 
-export default function Login(props: loginProps) {
+export default function Login() {
   return (
-    <main className="flex justify-center">
-      <div className="flex flex-col items-center justify-center p-8 shadow-xl rounded-xl ">
+    <main className="flex items-center justify-center w-screen h-screen p">
+
+      <div className="flex flex-col items-center justify-center max-w-md w-full p-8 shadow-xl rounded-xl border border-black/5">
         <header className="pb-8">
           <Logo path="#" />
         </header>
 
-        <section>
-          <div className="flex flex-col items-center justify-center gap-2 mb-4">
-            <h1 className="text-2xl">Crie sua conta</h1>
-            <p className="text-sm">Preencha seus dados para começar sua jornada</p>
+        <section className='w-full'>
+          <div className="flex flex-col items-center justify-center gap-2 mb-10">
+            <h1 className="text-2xl font-semibold">Acesse sua conta</h1>
+            <p className="text-sm">Entre com suas credenciais para continuar</p>
           </div>
-          <form className="flex flex-col">
-            <Input />
+          <form className='flex flex-col w-full'>
+            <Input label='Email' id="email" type='email' placeholder='seu@email.com' className='mb-6'/>
+            <Input label='Senha' id='password' type='password' placeholder='******' />
+            <div className='flex gap-5 justify-between mt-8'>
+              <Checkbox label='Lembrar de mim' icon={CheckIcon} />
+              <Link href="#" className='text-sm text-(--primary-color) focus:outline-(--primary-color)'> Esqueci minha senha</Link>
+            </div>
           </form>
-          <footer className="flex flex-col items-center gap-4">
-            <Button title="Criar conta" variant="primary" />
-            <Link href="#">
+
+          <footer className="flex flex-col items-center gap-8 mt-10">
+            <Button title="Entrar" variant="primary" className='w-full justify-center' />
+            <Link href="#" className='focus:outline-(--primary-color)'>
               <p className="text-sm">
-                Já possui uma conta ? <span className="text-(--primary-color)">Fazer login</span>
+                Ainda não tem conta ? <span className="text-(--primary-color)">Criar conta</span>
               </p>
             </Link>
           </footer>
