@@ -31,7 +31,7 @@ export default function SignIn() {
 
           <footer className="flex flex-col items-center gap-8 mt-10">
             <Button title="Criar conta" variant="primary" className='w-full justify-center' />
-            <Link href="#" className='focus:outline-(--primary-color)'>
+            <Link href="/login" className='focus:outline-(--primary-color)'>
               <p className="text-sm">
                 Já possui uma conta ? <span className="text-(--primary-color)">Fazer login</span>
               </p>

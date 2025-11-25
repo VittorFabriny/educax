@@ -32,7 +32,7 @@ export default function Login() {
 
           <footer className="flex flex-col items-center gap-8 mt-10">
             <Button title="Entrar" variant="primary" className='w-full justify-center' />
-            <Link href="#" className='focus:outline-(--primary-color)'>
+            <Link href="/signin" className='focus:outline-(--primary-color)'>
               <p className="text-sm">
                 Ainda não tem conta ? <span className="text-(--primary-color)">Criar conta</span>
               </p>
