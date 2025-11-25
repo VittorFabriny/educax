@@ -26,13 +26,13 @@ export default function Login() {
             <Input label='Senha' id='password' type='password' placeholder='******' />
             <div className='flex gap-5 justify-between mt-8'>
               <Checkbox label='Lembrar de mim' icon={CheckIcon} />
-              <Link href="#" className='text-sm text-(--primary-color) focus:outline-(--primary-color)'> Esqueci minha senha</Link>
+              <Link href="/recovery" className='text-sm text-(--primary-color) focus:outline-(--primary-color)'> Esqueci minha senha</Link>
             </div>
           </form>
 
           <footer className="flex flex-col items-center gap-8 mt-10">
             <Button title="Entrar" variant="primary" className='w-full justify-center' />
-            <Link href="#" className='focus:outline-(--primary-color)'>
+            <Link href="/signin" className='focus:outline-(--primary-color)'>
               <p className="text-sm">
                 Ainda não tem conta ? <span className="text-(--primary-color)">Criar conta</span>
               </p>
