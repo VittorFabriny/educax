@@ -17,7 +17,7 @@ export function HeroSection() {
           </p>
 
           <div className="flex gap-4 mt-4">
-            <Button variant="primary" title="Comece agora grátis" icon={ArrowRight} />
+            <Button href='/signin' variant="primary" title="Comece agora grátis" icon={ArrowRight} />
             <Button variant="secondary" title="Ver demonstração" icon={Play} />
           </div>
 

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { BookOpen } from 'lucide-react';
 import { Button } from './button';
+import { Logo } from './logo';
 
 export function Header() {
   return (
@@ -14,13 +14,8 @@ export function Header() {
         transition-all
       "
     >
-      {/* Logo */}
-      <Link href="/" className="flex items-end gap-2 text-2xl font-bold font-poppins">
-        <BookOpen className="h-8 w-8 text-(--primary-color)" />
-        <span>EducaX</span>
-      </Link>
+      <Logo path="/" />
 
-      {/* Navbar */}
       <nav className="hidden md:flex gap-8 items-center text-sm font-medium text-(--color-text-muted)">
         <Link href="/cursos">Cursos</Link>
         <Link href="/sobre">Sobre</Link>
@@ -33,10 +28,9 @@ export function Header() {
         </a>
       </nav>
 
-      {/* Buttons */}
       <div className="flex gap-4 items-center">
-        <Button variant="secondary" title="Login" />
-        <Button variant="primary" title="Cadastrar" />
+        <Button href='/login' variant="secondary" title="Login" />
+        <Button href='/signin' variant="primary" title="Cadastrar" />
       </div>
     </header>
   );

@@ -31,8 +31,8 @@ export function CallToAction() {
           </ul>
 
           <div className="flex gap-4 mt-12">
-            <Button variant="primary" title="Cadastrar grátis" />
-            <Button variant="secondary" title="Fazer Login" />
+            <Button href='/signin' variant="primary" title="Cadastrar grátis" />
+            <Button href='login' variant="secondary" title="Fazer Login" />
           </div>
         </div>
 
