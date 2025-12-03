@@ -17,7 +17,9 @@ export default function Landing() {
   return (
     <>
       <Header />
-      <div id='hero'>
+
+      {/* Hero */}
+      <div>
         <section className="px-5 lg:px-20 py-28 bg-(--color-bg)" >
           <div className="flex flex-col md:flex-row items-center justify-between gap-20">
             <div className="flex flex-col gap-6 max-w-xl">
@@ -65,6 +67,7 @@ export default function Landing() {
           </div>
         </section >
       </div>
+      
       <HowItWorks />
       <Popular />
       <Feedback />
