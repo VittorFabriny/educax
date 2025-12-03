@@ -13,7 +13,6 @@ type CardProps = {
   imageurl?: string;
   views?: number;
   duration?: number;
-  price?: string;
   classname?: string;
   user?: string;
   userImageUrl?: string;
@@ -22,19 +21,19 @@ type CardProps = {
 
 export function SectionCards(props: CardProps) {
   return (
-    <main className="flex flex-col gap-6 rounded-xl py-20">
+    <main className="flex flex-col gap-6 rounded-xl">
       {props.variant === 'popular' && (
-        <div className="h-full shadow-2xl rounded-xl">
+        <div className="h-full shadow-2xl rounded-2xl">
           <Image
             src={props.imageurl!}
             alt="Capa do curso"
             width={400}
             height={400}
-            className="w-full h-48 object-cover"
+            className="w-full h-48 object-cover rounded-t-2xl"
           />
           <section className="flex flex-col p-8 gap-8">
             <h1 className="text-lg font-semibold text-balance leading-tight">{props.title}</h1>
-            <p className="text-sm">{props.description}</p>
+            <p className="flex text-sm h-full">{props.description}</p>
 
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
@@ -52,8 +51,7 @@ export function SectionCards(props: CardProps) {
             </div>
 
             <div className="flex items-center justify-between mt-6">
-              <span className="text-2xl font-bold text-(--primary-color)">{props.price}</span>
-              <Button variant="primary" title="Saiba mais" />
+              <Button variant="primary" title="Ver detalhes" className='w-full flex items-center justify-center' />
             </div>
           </section>
         </div>
