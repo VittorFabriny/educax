@@ -17,21 +17,15 @@ export function Header() {
       <Logo path="/" />
 
       <nav className="hidden md:flex gap-8 items-center text-sm font-medium text-(--color-text-muted)">
+        <Link href="/">Home</Link>
         <Link href="/cursos">Cursos</Link>
         <Link href="/sobre">Sobre</Link>
-        <a
-          href="https://www.linkedin.com/in/vittorfabriny/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Contato
-        </a>
       </nav>
 
       <div className="flex gap-4 items-center">
         <Button href='/login' variant="secondary" title="Login" />
         <Button href='/signin' variant="primary" title="Cadastrar" />
       </div>
-    </header>
+    </header >
   );
 }

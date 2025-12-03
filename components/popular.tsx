@@ -47,7 +47,7 @@ export function Popular() {
         <p className="text-lg text-black/70">Os cursos mais procurados pelos nossos alunos</p>
       </header>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
         {popularCourses.map((course) => (
           <SectionCards key={course.title} variant="popular" {...course} />
         ))}
