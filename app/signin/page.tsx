@@ -3,9 +3,6 @@ import Link from 'next/link';
 import { Logo } from '../../components/logo';
 import { Input } from '../../components/input';
 import { Button } from '../../components/button';
-import { Checkbox } from '../../components/checkbox';
-
-import { CheckIcon } from 'lucide-react'
 
 export default function SignIn() {
   return (

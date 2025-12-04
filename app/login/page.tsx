@@ -1,4 +1,10 @@
+"use client";
+
 import Link from 'next/link';
+
+import { useContext } from "react";
+import { AuthContext } from "../context/authContext";
+
 
 import { Logo } from '../../components/logo';
 import { Input } from '../../components/input';
@@ -8,6 +14,9 @@ import { Checkbox } from '../../components/checkbox';
 import { CheckIcon } from 'lucide-react'
 
 export default function Login() {
+
+  const auth = useContext(AuthContext);
+  
   return (
     <main className="flex items-center justify-center w-screen h-screen p">
 
@@ -22,7 +31,7 @@ export default function Login() {
             <p className="text-sm">Entre com suas credenciais para continuar</p>
           </div>
           <form className='flex flex-col w-full'>
-            <Input label='Email' id="email" type='email' placeholder='seu@email.com' className='mb-6'/>
+            <Input label='Email' id="email" type='email' placeholder='seu@email.com' className='mb-6' />
             <Input label='Senha' id='password' type='password' placeholder='******' />
             <div className='flex gap-5 justify-between mt-8'>
               <Checkbox label='Lembrar de mim' icon={CheckIcon} />
@@ -31,7 +40,7 @@ export default function Login() {
           </form>
 
           <footer className="flex flex-col items-center gap-8 mt-10">
-            <Button title="Entrar" variant="primary" className='w-full justify-center' />
+            <Button title="Entrar" variant="primary" className='w-full justify-center' onClick={() => auth?.login()} />
             <Link href="/signin" className='focus:outline-(--primary-color)'>
               <p className="text-sm">
                 Ainda não tem conta ? <span className="text-(--primary-color)">Criar conta</span>
