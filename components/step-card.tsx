@@ -48,7 +48,7 @@ export function StepCard({ icon: Icon, title, description, variant, className, s
 
             <h3 className="text-xl font-semibold">{title}</h3>
 
-            <p>{description}</p>
+            <p className="max-w-sm">{description}</p>
 
             {stepNumber ? (
                 <div className="absolute right-4 top-4 w-10 h-10 bg-(--primary-color) rounded-full text-white flex items-center justify-center font-semibold">{stepNumber}</div>) : null}

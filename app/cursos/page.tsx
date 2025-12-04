@@ -1,3 +1,5 @@
+"use client";
+
 import { Search, TrendingUp, Award, ArrowLeft, Sparkles } from "lucide-react"
 
 import { Header } from "@/components/header"
@@ -35,7 +37,7 @@ const popularCourses = [
         rating: 4.9,
         views: 12500,
         duration: 8,
-        imageurl: '/blog-web-development.png',
+        imageurl: '/react-programming-code.jpg',
     },
     {
         title: 'UI/UX Design Moderno',
@@ -43,7 +45,7 @@ const popularCourses = [
         rating: 4.8,
         views: 8300,
         duration: 35,
-        imageurl: '/data-science-python-programming-charts-graphs.jpg',
+        imageurl: '/ui-ux-design-interface.png',
     },
     {
         title: 'Python para Ciência de Dados',
@@ -51,7 +53,7 @@ const popularCourses = [
         rating: 4.7,
         views: 9800,
         duration: 30,
-        imageurl: '/ux-ui-design-mockups-wireframes-creative-workspace.jpg',
+        imageurl: '/python-data-science-analytics.jpg',
     },
     {
         title: 'Marketing Digital Avançado',
@@ -59,7 +61,7 @@ const popularCourses = [
         rating: 4.6,
         views: 15200,
         duration: 25,
-        imageurl: '/digital-marketing-social-media-analytics-dashboard.jpg',
+        imageurl: '/digital-marketing-social-media.png',
     },
     {
         title: 'JavaScript Avançado',
@@ -67,7 +69,7 @@ const popularCourses = [
         rating: 4.6,
         views: 15200,
         duration: 25,
-        imageurl: '/digital-marketing-social-media-analytics-dashboard.jpg',
+        imageurl: '/javascript-code.png',
     },
     {
         title: 'Figma do Zero ao Avançado',
@@ -75,7 +77,7 @@ const popularCourses = [
         rating: 4.6,
         views: 15200,
         duration: 25,
-        imageurl: '/digital-marketing-social-media-analytics-dashboard.jpg',
+        imageurl: '/figma-design-interface-tools.jpg',
     },
     {
         title: 'SQL e Banco de Dados',
@@ -83,7 +85,7 @@ const popularCourses = [
         rating: 4.6,
         views: 15200,
         duration: 25,
-        imageurl: '/digital-marketing-social-media-analytics-dashboard.jpg',
+        imageurl: '/database-sql-data-structure.jpg',
     },
     {
         title: 'Gestão de Projetos Ágeis',
@@ -91,7 +93,7 @@ const popularCourses = [
         rating: 4.6,
         views: 15200,
         duration: 25,
-        imageurl: '/digital-marketing-social-media-analytics-dashboard.jpg',
+        imageurl: '/agile-project-management-scrum.jpg',
     },
     {
         title: 'Next.js e React Avançado',
@@ -99,7 +101,7 @@ const popularCourses = [
         rating: 4.6,
         views: 15200,
         duration: 25,
-        imageurl: '/digital-marketing-social-media-analytics-dashboard.jpg',
+        imageurl: '/nextjs-react-web-development.jpg',
     },
     {
         title: 'Photoshop e Edição de Imagens',
@@ -107,7 +109,7 @@ const popularCourses = [
         rating: 4.6,
         views: 15200,
         duration: 25,
-        imageurl: '/digital-marketing-social-media-analytics-dashboard.jpg',
+        imageurl: '/photoshop-image-editing-design.jpg',
     },
     {
         title: 'Excel Avançado para Negócios',
@@ -115,7 +117,7 @@ const popularCourses = [
         rating: 4.6,
         views: 15200,
         duration: 25,
-        imageurl: '/digital-marketing-social-media-analytics-dashboard.jpg',
+        imageurl: '/excel-spreadsheet-business-analytics.jpg',
     },
     {
         title: 'Node.js e APIs REST',
@@ -123,7 +125,7 @@ const popularCourses = [
         rating: 4.6,
         views: 15200,
         duration: 25,
-        imageurl: '/digital-marketing-social-media-analytics-dashboard.jpg',
+        imageurl: '/nodejs-api-backend-server.jpg',
     },
 ];
 
@@ -155,23 +157,25 @@ export default function Cursos() {
 
                             </div>
                         </div>
-                    </section >
 
+                    </section >
                     {/* Stats */}
-                    <div className="w-full pb-20 flex flex-col lg:flex-row items-center justify-center gap-8">
-                        {courseStat.map((course) => (
-                            <StepCard key={course.title} {...course} />
-                        ))}
+                    <div className="mx-5 lg:">
+                        <div className="w-full pb-20 flex flex-col lg:flex-row items-center justify-center gap-8">
+                            {courseStat.map((course) => (
+                                <StepCard key={course.title} {...course} />
+                            ))}
+                        </div>
                     </div>
                 </div>
 
                 {/* Courses */}
                 <section className="w-full">
 
-                    <header className="w-full bg-(--secondary-color)/5 py-10">
-                        <div className="mx-5 lg:mx-20">
-                            <div className="w-full p-10 flex items-center justify-between bg-white border border-black/10 rounded-2xl shadow-sm">
-                                <div className="absolute left-28 rounded-full bg-(--secondary-color)/10 text-(--secondary-color)/50 p-3">
+                    <header className="w-full flex items-center justify-center bg-(--secondary-color)/5 py-10">
+                        <div className="w-full mx-5 lg:mx-20 max-w-344">
+                            <div className="relative w-full p-10 flex items-center justify-between bg-white border border-black/10 rounded-2xl shadow-sm">
+                                <div className="absolute left-10 rounded-full bg-(--secondary-color)/10 text-(--secondary-color)/50 p-3">
                                     <Sparkles />
                                 </div>
                                 <div className="ml-18 flex flex-col gap-2">
@@ -181,15 +185,15 @@ export default function Cursos() {
                                     </p>
                                 </div>
 
-                                <Button title="Voltar para Home" variant="secondary" icon={ArrowLeft} />
+                                <Button href="/" title="Voltar para Home" variant="secondary" icon={ArrowLeft} />
                             </div>
                         </div>
                     </header>
 
                     {/* Input Nav */}
-                    <section className="pb-4 border-b border-black/10 py-6">
-                        <div className="mx-5">
-                            <div className="flex items-center justify-center gap-2">
+                    <section className="flex flex-col items-center justify-center pb-4 border-b border-black/10 py-6">
+                        <div className="mx-5 max-w-444">
+                            <div className="flex flex-col lg:flex-row items-center justify-center gap-2">
                                 <div className="w-full">
                                     <Input label="" type="search" placeholder="Buscar cursos..." />
                                 </div>
@@ -203,8 +207,8 @@ export default function Cursos() {
                     </section>
 
                     {/* Grid */}
-                    <section>
-                        <div className="mx-5 mt-20">
+                    <section className="flex items-center justify-center">
+                        <div className="mx-5 mt-20 max-w-444">
                             <div className="flex flex-col items-center justify-center">
                                 <div className="flex items-center justify-center">
                                     <div className="grid md:grid-cols-3 xl:grid-cols-4 gap-6">
@@ -222,8 +226,8 @@ export default function Cursos() {
 
                 </section>
 
-                <Footer />
-            </main>
+            </main >
+            <Footer />
 
         </>
     )

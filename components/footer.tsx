@@ -1,82 +1,54 @@
-import { BookOpen, Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
+import { Instagram, Linkedin } from 'lucide-react';
+
+import { Logo } from "@/components/logo"
 
 const footerSocialLinks = [
-  { icon: Facebook, href: '' },
-  { icon: Twitter, href: '' },
-  { icon: Instagram, href: 'https://www.instagram.com/vittorfabriny/' },
+  { icon: Instagram, href: 'https://www.instagram.com/vittorfabriny/', target: '_blank' },
   { icon: Linkedin, href: 'https://www.linkedin.com/in/vittorfabriny/', target: '_blank' },
-];
-
-const footerSections = [
-  {
-    title: 'Plataforma',
-    items: ['Cursos', 'Professores', 'Certificados', 'Preços'],
-  },
-  {
-    title: 'Empresa',
-    items: ['Sobre nós', 'Carreiras', 'Blog', 'Imprensa'],
-  },
-  {
-    title: 'Suporte',
-    items: ['Central de Ajuda', 'Contato', 'Status', 'Comunidade'],
-  },
 ];
 
 const legalLinks = ['Termos de Uso', 'Política de Privacidade', 'Cookies', 'LGPD'];
 
 export function Footer() {
   return (
-    <footer className="w-full bg-(--color-text-secondary) text-white p-4">
-      <div className="flex flex-col lg:flex-row justify-between px-5 lg:px-20 mt-10">
-        <div className="flex flex-col gap-6 mb-10">
-          <a className="flex items-center gap-2">
-            <BookOpen className="h-8 w-8 text-(--primary-color)" />
-            <span className="text-2xl font-bold">EducaX</span>
-          </a>
 
-          <p className="max-w-100">
-            Transformando vidas através da educação online. Aprenda novas habilidades e impulsione
-            sua carreira com os melhores cursos do mercado.
-          </p>
+    <footer className='flex flex-col items-center justify-center bg-(--color-text-secondary) text-white p-4'>
+      <div className='w-full mx-5 lg:mx-20 max-w-444 py-5'>
+        <div className='flex flex-col gap-10'>
+          <div className='w-full flex items-center justify-between'>
+            <div className='w-full flex flex-col gap-4 items-center justify-center '>
+              <Logo path='/' />
+              <p className='hidden md:block text-pretty max-w-100'>Transformando vidas através da educação online. Aprenda novas habilidades e impulsione sua carreira com os melhores cursos do mercado.</p>
+            </div>
 
-          <div className="flex gap-4">
-            {footerSocialLinks.map(({ icon: Icon, href, target }) => (
-              <a
-                key={href || Icon.displayName}
-                href={href}
-                target={target}
-                className="rounded-full bg-(--color-bg)/10 p-3 hover:bg-(--color-bg)/20 transition"
-              >
-                <Icon className="h-6 w-6 hover:text-(--primary-color) cursor-pointer transition" />
-              </a>
-            ))}
+            <div className='w-full flex flex-col gap-4'>
+              <div className="w-full flex items-center justify-center gap-4">
+                {footerSocialLinks.map(({ icon: Icon, href, target }) => (
+                  <a
+                    key={href || Icon.displayName}
+                    href={href}
+                    target={target}
+                    className="rounded-full bg-(--color-bg)/10 p-3 hover:bg-(--color-bg)/20 hover:text-(--primary-color) transition"
+                  >
+                    <Icon className="h-6 w-6 cursor-pointer transition" />
+                  </a>
+                ))}
+              </div>
+              <span className='flex justify-center text-white/20'>Vittor Fabriny</span>
+            </div>
+          </div>
+
+          <div className="w-full pt-5 flex items-center justify-center xl:justify-between text-center xl:text-start text-white/40 border-t border-white/40">
+            <p className='lg:mx-20'>© 2025 EducaX. Todos os direitos reservados.</p>
+
+            <ul className="hidden xl:flex items-center gap-4">
+              <li className='hover:text-white transition cursor-pointer'>Termos de uso</li>
+              <li className='hover:text-white transition cursor-pointer'>Política de Privacidade</li>
+              <li className='hover:text-white transition cursor-pointer'>Cookies</li>
+              <li className='hover:text-white transition cursor-pointer'>LGPD</li>
+            </ul>
           </div>
         </div>
-
-        <div className="w-full flex flex-col py-8 lg:flex-row justify-evenly">
-          {footerSections.map(({ title, items }) => (
-            <ul key={title} className="flex flex-col gap-2 mb-8 text-white/70">
-              <span className="text-white font-bold">{title}</span>
-              {items.map((item) => (
-                <li key={item} className="hover:text-white transition cursor-pointer">
-                  {item}
-                </li>
-              ))}
-            </ul>
-          ))}
-        </div>
-      </div>
-
-      <div className="p-5 lg:px-20 flex items-center justify-center lg:justify-between text-center lg:text-start text-white/40 border-t border-white/40">
-        <p>© 2025 EducaX. Todos os direitos reservados.</p>
-
-        <ul className="hidden lg:flex items-center gap-4">
-          {legalLinks.map((link) => (
-            <li key={link} className="hover:text-white transition cursor-pointer">
-              {link}
-            </li>
-          ))}
-        </ul>
       </div>
     </footer>
   );

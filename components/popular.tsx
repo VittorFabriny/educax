@@ -41,17 +41,45 @@ const popularCourses = [
 
 export function Popular() {
   return (
-    <section className="p-5 md:px-20 py-20 bg-(--color-bg-color)">
-      <header className="flex flex-col items-center text-center gap-4 mb-10">
-        <h2 className="text-3xl lg:text-4xl font-bold">Cursos em Destaque</h2>
-        <p className="text-lg text-black/70">Os cursos mais procurados pelos nossos alunos</p>
-      </header>
 
-      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
-        {popularCourses.map((course) => (
-          <SectionCards key={course.title} variant="popular" {...course} />
-        ))}
+    <main className='flex items-center justify-center'>
+      <div className='w-full mx-5 lg:mx-20 max-w-444 py-20 '>
+        <div>
+          <div className="flex flex-col items-center text-center gap-4 mb-20">
+            <h2 className="text-3xl lg:text-4xl font-bold">Cursos em Destaque</h2>
+            <p className="text-lg text-black/70">Os cursos mais procurados pelos nossos alunos</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {popularCourses.map((course) => (
+              <SectionCards key={course.title} variant="popular" {...course} />
+            ))}
+          </div>
+
+        </div>
       </div>
-    </section>
+    </main>
+
+
+
+
+
+
+
+
+
+
+    // <section className="">
+    //   <div className="flex flex-col items-center text-center gap-4 mb-10">
+    //     <h2 className="text-3xl lg:text-4xl font-bold">Cursos em Destaque</h2>
+    //     <p className="text-lg text-black/70">Os cursos mais procurados pelos nossos alunos</p>
+    //   </div>
+
+    //   <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+    //     {popularCourses.map((course) => (
+    //       <SectionCards key={course.title} variant="popular" {...course} />
+    //     ))}
+    //   </div>
+    // </section>
   );
 }

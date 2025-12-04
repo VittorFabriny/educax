@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
+import { AuthProvider } from './context/authContext';
+
 import { Inter, Poppins } from 'next/font/google';
 
 const inter = Inter({
@@ -29,7 +31,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" className={inter.className}>
-      <body>{children}</body>
+      <body>
+        <AuthProvider>
+          {children}
+        </AuthProvider>
+      </body>
     </html>
   );
 }

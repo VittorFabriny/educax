@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 
 import { ArrowRight, Play } from 'lucide-react';
@@ -11,8 +13,6 @@ import { Popular } from '../components/popular';
 import { CallToAction } from '../components/call-to-action';
 import { Footer } from '../components/footer';
 
-// import { HeroSection } from '../components/hero-section';
-
 export default function Landing() {
   return (
     <>
@@ -20,8 +20,8 @@ export default function Landing() {
 
       {/* Hero */}
       <div>
-        <section className="px-5 lg:px-20 py-28 bg-(--color-bg)" >
-          <div className="flex flex-col md:flex-row items-center justify-between gap-20">
+        <section className="flex items-center justify-center mx-5 lg:mx-20 py-28 bg-(--color-bg)" >
+          <div className="w-full flex flex-col md:flex-row items-center justify-center gap-20">
             <div className="flex flex-col gap-6 max-w-xl">
               <h1 className="text-4xl xl:text-6xl font-bold font-poppins leading-tight">
                 Aprenda de qualquer lugar com os
@@ -58,6 +58,7 @@ export default function Landing() {
                 width={632}
                 height={632}
                 className="rounded-4xl shadow-2xl"
+                loading='eager'
               />
 
               <div className="absolute right-6 top-6 bg-(--color-accent) p-2 px-4 rounded-full shadow-lg">
@@ -67,7 +68,7 @@ export default function Landing() {
           </div>
         </section >
       </div>
-      
+
       <HowItWorks />
       <Popular />
       <Feedback />

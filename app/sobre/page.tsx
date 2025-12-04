@@ -99,8 +99,8 @@ export default function Sobre() {
             </div>
 
             {/* Story */}
-            <div>
-                <div className="mx-5 lg:mx-20 py-20">
+            <div className="flex items-center justify-center ">
+                <div className="w-full mx-5 lg:mx-20 py-20 max-w-444 ">
                     <div className="flex flex-col xl:flex-row items-center justify-between gap-10">
                         <div className="flex flex-col gap-2 w-full">
                             <h1 className="text-4xl font-bold text-balance mb-4">Nossa história</h1>
@@ -138,7 +138,7 @@ export default function Sobre() {
             </section >
             <div className="flex justify-center bg-black/1 py-20">
                 <div className="mx-5 lg:mx-20 max-w-250">
-                    <div className="w-full grid grid-cols-2 lg:flex-row items-center justify-center gap-8">
+                    <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:flex-row items-center justify-center gap-8">
                         {aboutDifferentials.map((differentials) => (
                             <StepCard key={differentials.title} {...differentials} className="lg:items-start lg:text-left h-80" />
                         ))}
@@ -153,8 +153,8 @@ export default function Sobre() {
                             <Mail size={30} />
                         </div>
                         <h1 className="text-3xl font-bold mt-4">Entre em contato</h1>
-                        <p>Tem alguma dúvida ou sugestão? Estamos sempre prontos para ouvir você e melhorar a sua experiência.</p>
-                        <a href="#" className="text-(--primary-color)">fabrinyvittor@gmail.com</a>
+                        <p className="mx-5">Tem alguma dúvida ou sugestão? Estamos sempre prontos para ouvir você e melhorar a sua experiência.</p>
+                        <a href="https://www.linkedin.com/in/vittorfabriny/" className="text-(--primary-color)">fabrinyvittor@gmail.com</a>
                     </div>
                 </div>
             </section>
