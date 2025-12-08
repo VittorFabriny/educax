@@ -2,9 +2,9 @@ import Image from "next/image";
 
 import { Target, Eye, Heart, Clock, Award, Users, Headphones, RefreshCcw, Mail } from "lucide-react";
 
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
-import { StepCard } from "@/components/step-card";
+import { Header } from "@/app/components/header";
+import { Footer } from "@/app/components/footer";
+import { StepCard } from "@/app/components/step-card";
 
 const aboutValues = [
     {

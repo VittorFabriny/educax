@@ -4,14 +4,14 @@ import Image from 'next/image';
 
 import { ArrowRight, Play } from 'lucide-react';
 
-import { Button } from '@/components/button';
+import { Button } from '@/app/components/button';
 
-import { Feedback } from '../components/feedback';
-import { Header } from '../components/header';
-import { HowItWorks } from '../components/how-it-works';
-import { Popular } from '../components/popular';
-import { CallToAction } from '../components/call-to-action';
-import { Footer } from '../components/footer';
+import { Feedback } from './components/feedback';
+import { Header } from './components/header';
+import { HowItWorks } from './components/how-it-works';
+import { Popular } from './components/popular';
+import { CallToAction } from './components/call-to-action';
+import { Footer } from './components/footer';
 
 export default function Landing() {
   return (
@@ -33,8 +33,8 @@ export default function Landing() {
               </p>
 
               <div className="flex gap-4 mt-4">
-                <Button href='/signin' variant="primary" title="Comece agora grátis" icon={ArrowRight} />
-                <Button variant="secondary" title="Ver demonstração" icon={Play} />
+                <Button href='/signup' variant="primary" title="Comece agora grátis" icon={ArrowRight} />
+                <Button href="/cursos" variant="secondary" title="Ver demonstração" icon={Play} />
               </div>
 
               <div className="flex gap-10 mt-8">

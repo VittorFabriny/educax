@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import { Logo } from '../../components/logo';
-import { Input } from '../../components/input';
-import { Button } from '../../components/button';
+import { Logo } from '../components/logo';
+import { Input } from '../components/input';
+import { Button } from '../components/button';
 
 import { ArrowLeft } from 'lucide-react'
 
