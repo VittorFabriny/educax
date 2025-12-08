@@ -64,32 +64,8 @@ export default function Login() {
             />
 
             <div className='flex gap-5 justify-between mt-8'>
-              <Checkbox label='Lembrar de mim' id='checkbox' icon={CheckIcon} />
-              <Link href="recovery" className='text-sm text-(--primary-color) focus:outline-(--primary-color)'>
-                Esqueci minha senha
-              </Link>
-            </div>
-
-            {error && (
-              <p className="text-center mt-7 text-sm text-red-600">{error}</p>
-            )}
-
-            <div className="flex flex-col items-center gap-8 mt-7">
-
-              <Button
-                title={authLoading ? "Entrando..." : "Entrar"}
-                type='submit'
-                variant="primary"
-                className='w-full justify-center'
-                disabled={authLoading}
-              />
-
-              <Link href="/signup" className='focus:outline-(--primary-color)'>
-                <p className="text-sm">
-                  Ainda não tem conta ? <span className="text-(--primary-color)">Criar conta</span>
-                </p>
-              </Link>
-
+              <Checkbox label='Lembrar de mim' icon={CheckIcon} />
+              <Link href="/recovery" className='text-sm text-(--primary-color) focus:outline-(--primary-color)'> Esqueci minha senha</Link>
             </div>
           </form>
 
