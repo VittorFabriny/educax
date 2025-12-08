@@ -1,4 +1,4 @@
-# 🧩 Nome do Projeto
+# 🧩 EducaX
 
 Esta aplicação ainda está em desenvolvimento e atualmente se encontra em uma fase **estática / hardcoded** — ou seja, algumas funcionalidades ainda não estão conectadas ao backend e servem apenas como base visual e estrutural do projeto.
 
