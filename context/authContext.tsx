@@ -19,6 +19,7 @@ import {
   makeUserId,
   hashPassword,
   StoredUser,
+
 } from "../lib/authStorage";
 
 type PublicUser = {
@@ -38,7 +39,9 @@ type AuthContextType = {
   logout: () => void;
   getAllUsers: () => PublicUser[];
   success: boolean;
-};
+  setSuccess: React.Dispatch<React.SetStateAction<boolean>>;
+  recovery: (email: string) => Promise<void>;
+}
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -151,6 +154,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     router.push("/cursos");
   }
 
+  async function recovery(email: string) {
+    setAuthLoading(true);
+    setError(null);
+
+    const found = findUserByEmail(email);
+
+    if (!found) {
+      setError("Email não cadastrado");
+      setAuthLoading(false);
+      return;
+    }
+    setAuthLoading(false);
+    setSuccess(true)
+  }
+
   function logout() {
     setError(null);
     setAuthLoading(true);
@@ -179,7 +197,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     login,
     logout,
     getAllUsers,
-    success
+    success,
+    recovery,
+    setSuccess
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
