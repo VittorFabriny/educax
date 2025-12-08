@@ -18,7 +18,6 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   const { login, authLoading, error } = useAuth();
-  const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -67,7 +66,15 @@ export default function Login() {
               <Checkbox label='Lembrar de mim' icon={CheckIcon} />
               <Link href="/recovery" className='text-sm text-(--primary-color) focus:outline-(--primary-color)'> Esqueci minha senha</Link>
             </div>
+
+            {error && (
+              <p className='text-red-500 text-center pt-3 my-3'>{error}</p>
+            )}
+
+            <Button type='submit' variant='primary' title='Entrar' className='w-full mt-3 flex items-center justify-center' />
           </form>
+
+
 
         </section>
 
