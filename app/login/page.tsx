@@ -17,7 +17,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { login, authLoading, error } = useAuth();
+  const { login, error, success } = useAuth();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -32,8 +32,8 @@ export default function Login() {
           <Logo path="#" />
         </header>
 
-        <section className='w-full'>
 
+        <section className='w-full'>
           <div className="flex flex-col items-center justify-center gap-2 mb-10">
             <h1 className="text-2xl font-semibold">Acesse sua conta</h1>
             <p className="text-sm">Entre com suas credenciais para continuar</p>
@@ -68,18 +68,21 @@ export default function Login() {
             </div>
 
             {error && (
-              <p className='text-red-500 text-center pt-3 my-3'>{error}</p>
+              <p className='text-red-500 text-center mt-7 '>{error}</p>
             )}
 
-            <Button type='submit' variant='primary' title='Entrar' className='w-full mt-3 flex items-center justify-center' />
+            <Button type='submit' variant='primary' title='Entrar' className='w-full mt-8 flex items-center justify-center' />
+
+            <Link href="/signup" className='focus:outline-(--primary-color) flex self-center mt-4'>
+              <p className="text-sm">
+                Ainda não possui uma conta ? <span className="text-(--primary-color)">Cadastrar</span>
+              </p>
+            </Link>
           </form>
-
-
 
         </section>
 
       </div>
-
     </main>
   );
 }

@@ -33,10 +33,11 @@ type AuthContextType = {
   initializing: boolean;
   authLoading: boolean;
   error: string | null;
-  register: (name: string, email: string, password: string) => Promise<void>;
+  register: (name: string, email: string, password: string, confirmPassword: string) => Promise<void>;
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
   getAllUsers: () => PublicUser[];
+  success: boolean;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -47,6 +48,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [initializing, setInitializing] = useState(true);
   const [authLoading, setAuthLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<boolean>(false);
 
   useEffect(() => {
     const stored = getCurrentUser();
@@ -77,11 +79,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     );
   }
 
-  async function register(name: string, email: string, password: string) {
+  async function register(name: string, email: string, password: string, confirmPassword: string) {
     setError(null);
     setAuthLoading(true);
 
-    if (!name || !email || !password) {
+    if (!name || !email || !password || !confirmPassword) {
       setError("Preencha todos os campos.");
       setAuthLoading(false);
       return;
@@ -90,6 +92,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     if (password.length < 6) {
       setError("Senha deve ter ao menos 6 caracteres.");
       setAuthLoading(false);
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      setError("Confirmação de senha incorreta.");
       return;
     }
 
@@ -109,12 +116,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     };
 
     const saved = addUser(toSave);
-    setCurrentUser(saved);
-
-    syncUserFromStorage();
 
     setAuthLoading(false);
-    router.push("/");
+
+    setSuccess(true);
+    setTimeout(() => {
+      setSuccess(false);
+      router.push("/login");
+    }, 5000)
+
+
   }
 
   async function login(email: string, password: string) {
@@ -137,7 +148,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     setAuthLoading(false);
 
-    router.push("/");
+    router.push("/cursos");
   }
 
   function logout() {
@@ -168,6 +179,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     login,
     logout,
     getAllUsers,
+    success
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
