@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-import { AuthProvider } from './context/authContext';
+import { AuthProvider } from '../context/authContext';
 
 import { Inter, Poppins } from 'next/font/google';
 

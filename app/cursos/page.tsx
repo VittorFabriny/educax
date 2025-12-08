@@ -2,12 +2,12 @@
 
 import { Search, TrendingUp, Award, ArrowLeft, Sparkles } from "lucide-react"
 
-import { Header } from "@/components/header"
-import { Button } from "@/components/button"
-import { StepCard } from "@/components/step-card"
-import { Input } from "@/components/input"
-import { Footer } from "@/components/footer"
-import { SectionCards } from "@/components/section-cards"
+import { Header } from "@/app/components/header"
+import { Button } from "@/app/components/button"
+import { StepCard } from "@/app/components/step-card"
+import { Input } from "@/app/components/input"
+import { Footer } from "@/app/components/footer"
+import { SectionCards } from "@/app/components/section-cards"
 
 const courseStat = [
     {
@@ -218,7 +218,7 @@ export default function Cursos() {
                                     </div>
                                 </div>
 
-                                <Button title="Carregar mais cursos" variant="secondary" className="m-20" />
+                                <Button title="Carregar mais cursos" variant="secondary" className="m-20"/>
                             </div>
                         </div>
                     </section>
