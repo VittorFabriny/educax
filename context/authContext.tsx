@@ -98,6 +98,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     if (password !== confirmPassword) {
       setError('Confirmação de senha incorreta.');
+      setAuthLoading(false);
       return;
     }
 

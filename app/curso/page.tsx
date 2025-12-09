@@ -2,6 +2,8 @@
 
 import Image from 'next/image';
 
+import { useState } from 'react';
+
 import {
   Play,
   Heart,
@@ -12,6 +14,9 @@ import {
   Infinity,
   Award,
   Star,
+  ChevronDown,
+  ChevronRight,
+  Check,
 } from 'lucide-react';
 
 import { Header } from '../components/header';
@@ -24,24 +29,62 @@ export default function curso() {
     {
       title: 'Módulo 1 : Fundamentos do React',
       description: 'Introdução aos conceitos básicos do React e JSX',
+      modules: [
+        'Introdução',
+        'Componentes e Props',
+        'State e Lifecycle',
+        'Eventos em React',
+        'Renderização Condicional',
+        'Listas e Keys',
+      ],
     },
 
     {
       title: 'Módulo 2 : React Hooks',
       description: 'Aprenda a usar os principais hooks do React',
+      modules: [
+        'useState e useEffect',
+        'useContext e useReducer',
+        'useMemo e useCallback',
+        'Custom Hooks',
+        'Regras dos Hooks',
+      ],
     },
 
     {
       title: 'Módulo 3 : Next.js Fundamentos',
       description: 'Conceitos essenciais do framework Next.js',
+      modules: [
+        'Introdução ao Next.js',
+        'Roteamento de Páginas',
+        'Server Side Rendering (SSR)',
+        'Static Site Generation (SGP)',
+        'API Routes',
+        'Otimizações de Performance',
+      ],
     },
     {
       title: 'Módulo 4: Estilização e UI',
       description: 'Técnicas modernas de estilização',
+      modules: [
+        'CSS Modules',
+        'Styled Components',
+        'Tailwind CSS',
+        'Responsividade',
+        'Temas e Dark Mode',
+      ],
     },
     {
       title: 'Módulo 5: Projeto Final',
       description: 'Construa uma aplicação completa do zero',
+      modules: [
+        'Planejamento do Projeto',
+        'Setup e Arquitetura',
+        'Desenvolvimento do Frontend',
+        'Integração com APIs',
+        'Testes',
+        'Deploy em Produção',
+      ],
     },
   ];
 
@@ -70,6 +113,45 @@ export default function curso() {
 
   const maxStars = 5;
 
+  const faqs = [
+    {
+      question: 'Preciso ter experiência prévia em programação ?',
+      answer:
+        'Sim, é recomendado ter conhecimentos básicos de HTML, CSS e JavaScript antes de começar este curso. Não é necessário ser expert, mas saber os fundamentos ajudará muito.',
+    },
+    {
+      question: 'O curso oferece certificado de conclusão ?',
+      answer:
+        'Sim! Ao concluir 100% das aulas e atividades práticas, você receberá automaticamente um certificado digital de conclusão que pode ser compartilhado no LinkedIn.',
+    },
+    {
+      question: 'Por quanto tempo terei acesso ao conteúdo',
+      answer:
+        'O acesso é vitalício! Você poderá assistir às aulas quantas vezes quiser, para sempre, incluindo futuras atualizações de conteúdo.',
+    },
+    {
+      question: 'Há suporte para tirar dúvidas ?',
+      answer:
+        'Sim! Você terá acesso à nossa comunidade exclusiva no Discord onde poderá tirar dúvidas com o instrutor e outros alunos.',
+    },
+    {
+      question: 'Preciso pagar alguma mensalidade ?',
+      answer:
+        'Não! É um pagamento único com acesso vitalício. Sem mensalidades ou taxas adicionais.',
+    },
+  ];
+
+  const [faqOpen, setFaqOpen] = useState<number | null>(null);
+  const [modsOpen, setModsOpen] = useState<number | null>(null);
+
+  function toggleMODS(mIndex: number) {
+    setModsOpen(modsOpen === mIndex ? null : mIndex);
+  }
+
+  function toggleFAQ(i: number) {
+    setFaqOpen(faqOpen === i ? null : i);
+  }
+
   return (
     <>
       <Header />
@@ -96,8 +178,7 @@ export default function curso() {
             </div>
 
             {/* Image */}
-
-            <div className="rounded-2xl w-full overflow-hidden shadow-xl">
+            <div className="relative rounded-2xl w-full overflow-hidden shadow-xl cursor-pointer">
               <Image
                 src="/react-programming-code.jpg"
                 alt="Capa do curso"
@@ -105,6 +186,12 @@ export default function curso() {
                 height={450}
                 className="w-full object-cover aspect-video"
               />
+              <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent flex items-center ">
+                <div className="flex items-center absolute text-white bottom-5 left-5 gap-4">
+                  <Play />
+                  <p>Preview do Curso</p>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -144,7 +231,6 @@ export default function curso() {
       </div>
 
       {/* Conteúdo */}
-
       <div className="flex items-center justify-center">
         <div className="mx-5 max-w-444 lg:mx-20 w-full">
           <div className="pb-20 w-full">
@@ -156,10 +242,30 @@ export default function curso() {
                 {moduleContents.map((item, index) => (
                   <div
                     key={index}
-                    className="flex flex-col justify-center p-5 border border-black/10 rounded-2xl "
+                    className="flex flex-col justify-center border border-black/5 rounded-2xl "
                   >
-                    <h2>{item.title}</h2>
-                    <p>{item.description}</p>
+                    <div
+                      className="hover:bg-black/5 p-5 pb-5 rounded-t-2xl cursor-pointer"
+                      onClick={() => toggleMODS(index)}
+                    >
+                      <h2 className="font-semibold">{item.title}</h2>
+                      <p>{item.description}</p>
+                    </div>
+
+                    {modsOpen === index ? (
+                      <div className="mx-5 mt-3 mb-5">
+                        <ul className="flex flex-col gap-2">
+                          {item.modules.map((mod, mIndex) => (
+                            <div key={mIndex} className="flex gap-2">
+                              <div>
+                                <Check className="text-(--secondary-color)" />
+                              </div>
+                              <li>{mod}</li>
+                            </div>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
                   </div>
                 ))}
               </div>
@@ -169,7 +275,6 @@ export default function curso() {
       </div>
 
       {/* Professor */}
-
       <div className="flex items-center justify-center">
         <div className="mx-5 lg:mx-20 w-full max-w-444 py-20">
           <div>
@@ -206,7 +311,6 @@ export default function curso() {
       </div>
 
       {/* Certificado */}
-
       <div className="flex items-center justify-center">
         <div className="py-20 mx-5 lg:mx-20 max-w-444 w-full">
           <StepCard
@@ -220,7 +324,6 @@ export default function curso() {
       </div>
 
       {/* Avaliações */}
-
       <div className="flex items-center justify-center">
         <div className="mx-5 max-w-444 lg:mx-20 w-full">
           <div className="w-full">
@@ -265,20 +368,25 @@ export default function curso() {
             </div>
 
             <div>
-              <div className="flex flex-col gap-6 py-8 border border-black/10 p-6 rounded-2xl">
-                <h3 className="font-semibold border-b border-black/10 pb-3">
-                  Preciso ter experiência prévia em programação ?
-                </h3>
-                <h3 className="font-semibold border-b border-black/10 pb-3">
-                  O curso oferece certificado de conclusão ?
-                </h3>
-                <h3 className="font-semibold border-b border-black/10 pb-3">
-                  Por quanto tempo terei acesso ao conteúdo
-                </h3>
-                <h3 className="font-semibold border-b border-black/10 pb-3">
-                  Há suporte para tirar dúvidas ?
-                </h3>
-                <h3 className="font-semibold pb-2">Preciso pagar alguma mensalidade ?</h3>
+              <div className="relative flex flex-col gap-6 py-8 border border-black/10 p-6 rounded-2xl">
+                {faqs.map((item, i) => (
+                  <div
+                    className=" flex items-center justify-between cursor-pointer"
+                    onClick={() => toggleFAQ(i)}
+                  >
+                    <div className="w-full flex flex-col justify-between border-b border-black/10">
+                      <div key={i} className="pb-4 font-semibold">
+                        {item.question}
+                      </div>
+                      {faqOpen === i ? (
+                        <div className="py-2 pb-4">
+                          <p>{item.answer}</p>
+                        </div>
+                      ) : null}
+                    </div>
+                    <div>{faqOpen === i ? <ChevronDown /> : <ChevronRight />}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -286,7 +394,6 @@ export default function curso() {
       </div>
 
       {/* CTA */}
-
       <div className="flex items-center justify-center bg-linear-to-r from-(--primary-color)/10 to-(--secondary-color)/10">
         <div className="mx-5 lg:mx-20 max-w-444 py-20 w-full">
           <div className="">
