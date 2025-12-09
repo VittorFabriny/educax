@@ -1,37 +1,35 @@
 import { Award, Monitor, Search } from 'lucide-react';
 
-import { StepCard } from "@/app/components/step-card"
-
+import { StepCard } from '@/app/components/step-card';
 
 const guideSteps = [
   {
-    title: "Escolha o curso",
-    description: "Navegue por nossa biblioteca com mais de 200 cursos em diversas áreas.",
+    title: 'Escolha o curso',
+    description: 'Navegue por nossa biblioteca com mais de 200 cursos em diversas áreas.',
     stepNumber: 1,
     icon: Search,
-    variant: "primary",
+    variant: 'primary',
   },
   {
-    title: "Estude online",
-    description: "Aprenda no seu ritmo com videoaulas, exercícios práticos e suporte.",
+    title: 'Estude online',
+    description: 'Aprenda no seu ritmo com videoaulas, exercícios práticos e suporte.',
     icon: Monitor,
     stepNumber: 2,
-    variant: "primary",
+    variant: 'primary',
   },
   {
-    title: "Receba certificado",
-    description: "Conquiste seu certificado reconhecido e impulsione sua carreira.",
+    title: 'Receba certificado',
+    description: 'Conquiste seu certificado reconhecido e impulsione sua carreira.',
     icon: Award,
     stepNumber: 3,
-    variant: "primary",
+    variant: 'primary',
   },
 ] as const;
 
 export function HowItWorks() {
   return (
-
-    <section className='flex items-center justify-center bg-(--color-bg-alt)/50'>
-      <div className='w-full mx-5 lg:mx-20 max-w-444 py-20'>
+    <section className="flex items-center justify-center bg-(--color-bg-alt)/50">
+      <div className="w-full mx-5 lg:mx-20 max-w-444 py-20">
         <div>
           <div className="flex flex-col items-center mb-16 text-center">
             <h2 className="text-3xl lg:text-4xl font-bold font-poppins mb-4">Como funciona</h2>

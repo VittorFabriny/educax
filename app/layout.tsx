@@ -32,9 +32,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br" className={inter.className}>
       <body>
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );

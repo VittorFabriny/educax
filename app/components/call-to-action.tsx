@@ -12,13 +12,12 @@ const benefits = [
 
 export function CallToAction() {
   return (
-
-    <main className='flex items-center justify-center'>
-      <div className='w-full mx-5 lg:mx-20 max-w-444 py-20'>
-        <div className='bg-(--primary-color)/5 p-10 rounded-3xl'>
+    <main className="flex items-center justify-center">
+      <div className="w-full mx-5 lg:mx-20 max-w-444 py-20">
+        <div className="bg-(--primary-color)/5 p-10 rounded-3xl">
           <div>
-            <div className='flex flex-col xl:flex-row items-center justify-center '>
-              <div className='w-full flex flex-col justify-center py-10 lg:p-10'>
+            <div className="flex flex-col xl:flex-row items-center justify-center ">
+              <div className="w-full flex flex-col justify-center py-10 lg:p-10">
                 <h1 className="text-3xl lg:text-4xl font-bold">Junte-se a milhares de alunos</h1>
 
                 <p className="mt-3 text-(--color-text-muted)">
@@ -35,8 +34,8 @@ export function CallToAction() {
                 </ul>
 
                 <div className="flex gap-4 mt-12">
-                  <Button href='/signup' variant="primary" title="Cadastrar grátis" />
-                  <Button href='login' variant="secondary" title="Fazer Login" />
+                  <Button href="/signup" variant="primary" title="Cadastrar grátis" />
+                  <Button href="login" variant="secondary" title="Fazer Login" />
                 </div>
               </div>
 
@@ -47,7 +46,6 @@ export function CallToAction() {
                 height={400}
                 className="rounded-2xl object-cover shadow-2xl w-full h-auto"
               />
-
             </div>
           </div>
         </div>

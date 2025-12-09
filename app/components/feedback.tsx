@@ -30,13 +30,16 @@ const feedbackData = [
 
 export function Feedback() {
   return (
-
-    <main className='flex items-center justify-center bg-(--color-bg-alt)/50'>
-      <div className='w-full mx-5 lg:mx-20 max-w-444 py-20'>
-        <div className='flex flex-col gap-20'>
+    <main className="flex items-center justify-center bg-(--color-bg-alt)/50">
+      <div className="w-full mx-5 lg:mx-20 max-w-444 py-20">
+        <div className="flex flex-col gap-20">
           <div className="flex flex-col text-center gap-4">
-            <h1 className="font-3xl lg:text-4xl font-bold font-poppins">O que nossos alunos dizem</h1>
-            <p className="text-(--color-text-muted)">Histórias reais de transformação profissional</p>
+            <h1 className="font-3xl lg:text-4xl font-bold font-poppins">
+              O que nossos alunos dizem
+            </h1>
+            <p className="text-(--color-text-muted)">
+              Histórias reais de transformação profissional
+            </p>
           </div>
           <div className="flex flex-col md:flex-row gap-8">
             {feedbackData.map((feedback) => (

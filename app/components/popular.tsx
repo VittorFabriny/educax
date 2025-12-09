@@ -41,9 +41,8 @@ const popularCourses = [
 
 export function Popular() {
   return (
-
-    <main className='flex items-center justify-center'>
-      <div className='w-full mx-5 lg:mx-20 max-w-444 py-20 '>
+    <main className="flex items-center justify-center">
+      <div className="w-full mx-5 lg:mx-20 max-w-444 py-20 ">
         <div>
           <div className="flex flex-col items-center text-center gap-4 mb-20">
             <h2 className="text-3xl lg:text-4xl font-bold">Cursos em Destaque</h2>
@@ -55,7 +54,6 @@ export function Popular() {
               <SectionCards key={course.title} variant="popular" {...course} />
             ))}
           </div>
-
         </div>
       </div>
     </main>

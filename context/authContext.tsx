@@ -1,14 +1,8 @@
-"use client";
+'use client';
 
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useState,
-  ReactNode,
-} from "react";
+import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
 
 import {
   getUsers,
@@ -19,8 +13,7 @@ import {
   makeUserId,
   hashPassword,
   StoredUser,
-
-} from "../lib/authStorage";
+} from '../lib/authStorage';
 
 type PublicUser = {
   id: string;
@@ -34,14 +27,19 @@ type AuthContextType = {
   initializing: boolean;
   authLoading: boolean;
   error: string | null;
-  register: (name: string, email: string, password: string, confirmPassword: string) => Promise<void>;
+  register: (
+    name: string,
+    email: string,
+    password: string,
+    confirmPassword: string
+  ) => Promise<void>;
   login: (email: string, password: string) => Promise<void>;
   logout: () => void;
   getAllUsers: () => PublicUser[];
   success: boolean;
   setSuccess: React.Dispatch<React.SetStateAction<boolean>>;
   recovery: (email: string) => Promise<void>;
-}
+};
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -58,11 +56,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(
       stored
         ? {
-          id: stored.id,
-          name: stored.name,
-          email: stored.email,
-          createdAt: stored.createdAt,
-        }
+            id: stored.id,
+            name: stored.name,
+            email: stored.email,
+            createdAt: stored.createdAt,
+          }
         : null
     );
     setInitializing(false);
@@ -73,11 +71,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(
       stored
         ? {
-          id: stored.id,
-          name: stored.name,
-          email: stored.email,
-          createdAt: stored.createdAt,
-        }
+            id: stored.id,
+            name: stored.name,
+            email: stored.email,
+            createdAt: stored.createdAt,
+          }
         : null
     );
   }
@@ -87,25 +85,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setAuthLoading(true);
 
     if (!name || !email || !password || !confirmPassword) {
-      setError("Preencha todos os campos.");
+      setError('Preencha todos os campos.');
       setAuthLoading(false);
       return;
     }
 
     if (password.length < 6) {
-      setError("Senha deve ter ao menos 6 caracteres.");
+      setError('Senha deve ter ao menos 6 caracteres.');
       setAuthLoading(false);
       return;
     }
 
     if (password !== confirmPassword) {
-      setError("Confirmação de senha incorreta.");
+      setError('Confirmação de senha incorreta.');
       return;
     }
 
     const existing = findUserByEmail(email);
     if (existing) {
-      setError("E-mail já cadastrado.");
+      setError('E-mail já cadastrado.');
       setAuthLoading(false);
       return;
     }
@@ -125,24 +123,22 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setSuccess(true);
     setTimeout(() => {
       setSuccess(false);
-      router.push("/login");
-    }, 5000)
-
-
+      router.push('/login');
+    }, 5000);
   }
 
   async function login(email: string, password: string) {
     setError(null);
 
     if (!email || !password) {
-      setError("Preencha todos os campos.");
+      setError('Preencha todos os campos.');
       setAuthLoading(false);
       return;
     }
 
     const found = findUserByEmail(email);
     if (!found || found.passwordHash !== hashPassword(password)) {
-      setError("Usuário ou senha incorretos.");
+      setError('Usuário ou senha incorretos.');
       setAuthLoading(false);
       return;
     }
@@ -151,7 +147,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
     setAuthLoading(false);
 
-    router.push("/cursos");
+    router.push('/cursos');
   }
 
   async function recovery(email: string) {
@@ -161,12 +157,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const found = findUserByEmail(email);
 
     if (!found) {
-      setError("Email não cadastrado");
+      setError('Email não cadastrado');
       setAuthLoading(false);
       return;
     }
     setAuthLoading(false);
-    setSuccess(true)
+    setSuccess(true);
   }
 
   function logout() {
@@ -199,7 +195,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     getAllUsers,
     success,
     recovery,
-    setSuccess
+    setSuccess,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
@@ -207,6 +203,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
 export function useAuth() {
   const ctx = useContext(AuthContext);
-  if (!ctx) throw new Error("useAuth must be used inside AuthProvider");
+  if (!ctx) throw new Error('useAuth must be used inside AuthProvider');
   return ctx;
 }

@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Image from 'next/image';
 
@@ -20,7 +20,7 @@ export default function Landing() {
 
       {/* Hero */}
       <div>
-        <section className="flex items-center justify-center mx-5 lg:mx-20 py-28 bg-(--color-bg)" >
+        <section className="flex items-center justify-center mx-5 lg:mx-20 py-28 bg-(--color-bg)">
           <div className="w-full flex flex-col md:flex-row items-center justify-center gap-20">
             <div className="flex flex-col gap-6 max-w-xl">
               <h1 className="text-4xl xl:text-6xl font-bold font-poppins leading-tight">
@@ -33,7 +33,12 @@ export default function Landing() {
               </p>
 
               <div className="flex gap-4 mt-4">
-                <Button href='/signup' variant="primary" title="Comece agora grátis" icon={ArrowRight} />
+                <Button
+                  href="/signup"
+                  variant="primary"
+                  title="Comece agora grátis"
+                  icon={ArrowRight}
+                />
                 <Button href="/cursos" variant="secondary" title="Ver demonstração" icon={Play} />
               </div>
 
@@ -58,7 +63,7 @@ export default function Landing() {
                 width={632}
                 height={632}
                 className="rounded-4xl shadow-2xl"
-                loading='eager'
+                loading="eager"
               />
 
               <div className="absolute right-6 top-6 bg-(--color-accent) p-2 px-4 rounded-full shadow-lg">
@@ -66,7 +71,7 @@ export default function Landing() {
               </div>
             </div>
           </div>
-        </section >
+        </section>
       </div>
 
       <HowItWorks />
