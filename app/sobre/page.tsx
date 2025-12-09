@@ -154,7 +154,7 @@ export default function Sobre() {
                         </div>
                         <h1 className="text-3xl font-bold mt-4">Entre em contato</h1>
                         <p className="mx-5">Tem alguma dúvida ou sugestão? Estamos sempre prontos para ouvir você e melhorar a sua experiência.</p>
-                        <a href="https://www.linkedin.com/in/vittorfabriny/" className="text-(--primary-color)">fabrinyvittor@gmail.com</a>
+                        <a href="mailto:fabrinyvittor@gmail.com" className="text-(--primary-color)">fabrinyvittor@gmail.com</a>
                     </div>
                 </div>
             </section>

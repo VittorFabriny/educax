@@ -42,7 +42,7 @@ export function Header() {
             ) : (
               <div className='hidden md:flex items-center gap-4'>
                 <Button variant="secondary" title="Sair" onClick={logout} />
-                
+
                 <p className='hidden lg:block'>{user.name}</p>
                 <div className='rounded-full'>
                   <Image src="https://avatars.githubusercontent.com/VittorFabriny" width={40} height={40} alt="Imagem de Perfil" className='rounded-full' />
@@ -62,15 +62,34 @@ export function Header() {
 
         <div className={`${!open ? "hidden" : "w-full h-screen"}`}>
           <div className={`mx-10`}>
-            <div className='flex flex-col gap-8 mt-10 mb-20 text-lg font-medium text-(--color-text-muted)'>
+            <div className='relative h-screen flex flex-col gap-8 mt-10 mb-20 text-lg font-medium text-(--color-text-muted)'>
               <Link href="/" className='border-b border-gray-300 pb-2'>Home</Link>
               <Link href="/cursos" className='border-b border-gray-300 pb-2'>Cursos</Link>
               <Link href="/sobre" className='border-b border-gray-300 pb-2'>Sobre</Link>
 
-              {!user ? (<Link href="/login" className='border-b border-gray-300 pb-2'>Login</Link>) : (<Link href="#" className='border-b border-gray-300 pb-2'>Sair</Link>)}
+              {!user ? (<Link href="/login" className='border-b border-gray-300 pb-2'>Login</Link>) : null}
+              {!user ? (<Link href="/signup" className='border-b border-gray-300 pb-2 items-end-'>Cadastrar</Link>) : null}
 
-              {!user ? (<Link href="/signup" className='border-b border-gray-300 pb-2'>Cadastrar</Link>) : null}
 
+              {user ? (
+                <div className='w-full absolute bottom-40'>
+                  <div className='flex flex-col gap-8 text-lg font-medium text-(--color-text-muted)'>
+                    <Link href="#" className='border-b border-gray-300 pb-2' onClick={logout}>Sair</Link>
+                  </div>
+                  <div className='flex items-center justify-between mt-4'>
+                    <p>
+                      {user.name}
+                    </p>
+                    <div>
+                      <Image src="https://avatars.githubusercontent.com/VittorFabriny" width={40} height={40} alt="Imagem de Perfil" className='rounded-full' />
+                    </div>
+                  </div>
+                </div>
+
+              )
+                :
+                null
+              }
             </div>
           </div>
         </div>
