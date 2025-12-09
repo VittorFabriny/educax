@@ -51,7 +51,12 @@ export function SectionCards(props: CardProps) {
             </div>
 
             <div className="flex items-center justify-between mt-6">
-              <Button variant="primary" title="Ver detalhes" className='w-full flex items-center justify-center' href="/curso" />
+              <Button
+                variant="primary"
+                title="Ver detalhes"
+                className="w-full flex items-center justify-center"
+                href="/curso"
+              />
             </div>
           </section>
         </div>
