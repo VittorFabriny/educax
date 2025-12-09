@@ -224,7 +224,7 @@ export default function curso() {
                         <div className='flex flex-col items-center gap-10 justify-center'>
                             <h1 className='text-3xl lg:text-4xl font-bold text-balance'>Pronto para começar este curso?</h1>
                             <p className='text-lg text-(--color-text-muted) text-pretty'>Junte-se a milhares de alunos que já transformaram suas carreiras com este curso.</p>
-                            <Button title='Iniciar agora' variant='primary' icon={Play} />
+                            <Button href='/signup' title='Iniciar agora' variant='primary' icon={Play} />
                         </div>
                     </div>
                 </div>

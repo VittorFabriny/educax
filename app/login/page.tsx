@@ -26,7 +26,7 @@ export default function Login() {
   return (
     <main className="flex items-center justify-center w-screen h-screen">
 
-      <div className="flex flex-col items-center justify-center max-w-md w-full p-8 shadow-xl rounded-xl border border-black/5">
+      <div className="mx-5 flex flex-col items-center justify-center max-w-md w-full p-8 shadow-xl rounded-xl border border-black/5">
         <header className="pb-8">
           <Logo path="#" />
         </header>

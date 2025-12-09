@@ -174,11 +174,11 @@ export default function Cursos() {
 
                     <header className="w-full flex items-center justify-center bg-(--secondary-color)/5 py-10">
                         <div className="w-full mx-5 lg:mx-20 max-w-344">
-                            <div className="relative w-full p-10 flex items-center justify-between bg-white border border-black/10 rounded-2xl shadow-sm">
-                                <div className="absolute left-10 rounded-full bg-(--secondary-color)/10 text-(--secondary-color)/50 p-3">
+                            <div className="relative w-full p-10 flex flex-col md:flex-row gap-8 items-center justify-between bg-white border border-black/10 rounded-2xl shadow-sm">
+                                <div className="absolute hidden md:block left-10 rounded-full bg-(--secondary-color)/10 text-(--secondary-color)/50 p-3">
                                     <Sparkles />
                                 </div>
-                                <div className="ml-18 flex flex-col gap-2">
+                                <div className="md:ml-18 flex flex-col gap-8 md:gap-2 text-center md:text-start">
                                     <h2 className="text-xl font-semibold font-poppins text-foreground">Você viu alguns cursos em destaque na landing page
                                     </h2>
                                     <p className="">Aqui está a lista completa de todos os nossos cursos disponíveis.
@@ -197,9 +197,9 @@ export default function Cursos() {
                                 <div className="w-full">
                                     <Input label="" type="search" placeholder="Buscar cursos..." />
                                 </div>
-                                <div className="w-full flex gap-2">
-                                    <Input label="" type="select" placeholder="Categoria" />
-                                    <Input label="" type="select" placeholder="Duração" />
+                                <div className="w-full flex items-center justify-between">
+                                    <Input label="" type="select" placeholder="Categoria" className="mr-2"/>
+                                    <Input label="" type="select" placeholder="Duração" className="mr-2" />
                                     <Input label="" type="select" placeholder="Nível" />
                                 </div>
                             </div>
@@ -207,7 +207,7 @@ export default function Cursos() {
                     </section>
 
                     {/* Grid */}
-                    <section className="flex items-center justify-center">
+                    <section className="flex items-center justify-center pb-20">
                         <div className="mx-5 mt-20 max-w-444">
                             <div className="flex flex-col items-center justify-center">
                                 <div className="flex items-center justify-center">
@@ -218,7 +218,7 @@ export default function Cursos() {
                                     </div>
                                 </div>
 
-                                <Button title="Carregar mais cursos" variant="secondary" className="m-20"/>
+                                {/* <Button title="Carregar mais cursos" variant="secondary" className="m-20"/> */}
                             </div>
                         </div>
                     </section>

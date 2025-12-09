@@ -18,7 +18,7 @@ export function CallToAction() {
         <div className='bg-(--primary-color)/5 p-10 rounded-3xl'>
           <div>
             <div className='flex flex-col xl:flex-row items-center justify-center '>
-              <div className='w-full flex flex-col justify-center p-10'>
+              <div className='w-full flex flex-col justify-center py-10 lg:p-10'>
                 <h1 className="text-3xl lg:text-4xl font-bold">Junte-se a milhares de alunos</h1>
 
                 <p className="mt-3 text-(--color-text-muted)">
