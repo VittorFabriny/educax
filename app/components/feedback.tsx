@@ -6,25 +6,25 @@ const feedbackData = [
     description:
       '"Graças à plataforma consegui um emprego na área de tecnologia em 3 meses. Os cursos são muito práticos e atualizados."',
     user: 'Ana Silva',
-    userRole: 'Desenvolvedora Front-end',
-    userImageUrl: '/professional-woman-smiling-headshot.png',
+    userRole: 'Senior Backend Developer',
+    userImageUrl: 'https://avatars.githubusercontent.com/neliocaa',
     classname: 'leading-relaxed',
   },
   {
     rating: 5,
     description:
-      '"Graças à plataforma consegui um emprego na área de tecnologia em 3 meses. Os cursos são muito práticos e atualizados."',
-    user: 'Carlos Santos',
-    userRole: 'Data Scientist',
-    userImageUrl: '/professional-man-smiling-headshot.png',
+      '"A qualidade do ensino é excepcional. Os professores são especialistas e sempre disponíveis para tirar dúvidas."',
+    user: 'Kassio Eduardo',
+    userRole: 'Senior Fullstack Developer',
+    userImageUrl: 'https://avatars.githubusercontent.com/kassiogluten',
   },
   {
     rating: 5,
     description:
-      '"Graças à plataforma consegui um emprego na área de tecnologia em 3 meses. Os cursos são muito práticos e atualizados."',
-    user: 'Mariana Costa',
-    userRole: 'UX Designer',
-    userImageUrl: '/professional-woman-designer-smiling-headshot.jpg',
+      '"Mudei completamente de carreira aos 35 anos. O suporte da EducaX foi fundamental para minha transição."',
+    user: 'Joseph Oliveira',
+    userRole: 'Senior Frontend Developer',
+    userImageUrl: 'https://avatars.githubusercontent.com/josepholiveira',
   },
 ];
 
