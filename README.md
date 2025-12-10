@@ -40,15 +40,15 @@ horária.
 
 ### ✔️ Página de detalhes do curso
 
--   Descrição completa\
--   Avaliações dos alunos\
--   Rating médio\
+-   Descrição completa
+-   Avaliações dos alunos
+-   Rating médio
 -   Estrutura organizada da página
 
 ### ✔️ Autenticação de Usuário (LocalStorage)
 
--   Registro e login funcionando\
--   Persistência simples via LocalStorage\
+-   Registro e login funcionando
+-   Persistência simples via LocalStorage
 -   Estrutura organizada para migração futura para API real
 
 ### ✔️ Persistência Simulada
@@ -89,13 +89,13 @@ npm run dev
 
 # 🚧 **Próximos Passos da Aplicação**
 
--   Migrar a autenticação do LocalStorage para uma **API real**\
--   Criar dashboard do aluno\
--   Implementar painel administrativo para gerenciar cursos\
--   Adicionar novos módulos e páginas internas\
--   Adicionar tema **dark/light**\
--   Melhorar acessibilidade (ARIA, navegação por teclado)\
--   Criar testes unitários e de integração para componentes principais\
+-   Migrar a autenticação do LocalStorage para uma **API real**
+-   Criar dashboard do aluno
+-   Implementar painel administrativo para gerenciar cursos
+-   Adicionar novos módulos e páginas internas
+-   Adicionar tema **dark/light**
+-   Melhorar acessibilidade (ARIA, navegação por teclado)
+-   Criar testes unitários e de integração para componentes principais
 
 ------------------------------------------------------------------------
 
