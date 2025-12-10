@@ -2,6 +2,8 @@
 
 import { Search, TrendingUp, Award, ArrowLeft, Sparkles } from 'lucide-react';
 
+import { Select } from '../components/select';
+
 import { Header } from '@/app/components/header';
 import { Button } from '@/app/components/button';
 import { StepCard } from '@/app/components/step-card';
@@ -136,6 +138,31 @@ const popularCourses = [
   },
 ];
 
+//  Search Categories
+
+const searchCategory = [
+  { label: 'Todas', value: 'all' },
+  { label: 'Programação', value: 'dev' },
+  { label: 'Design', value: 'design' },
+  { label: 'Negócios', value: 'business' },
+  { label: 'Marketing', value: 'marketing' },
+  { label: 'Dados', value: 'data' },
+];
+
+const searchLength = [
+  { label: 'Todas', value: 'all' },
+  { label: 'Curta (0-2h)', value: 'short' },
+  { label: 'Média (2-6h)', value: 'medium' },
+  { label: 'Longa (6h+)', value: 'long' },
+];
+
+const searchLevel = [
+  { label: 'Todos', value: 'all' },
+  { label: 'Iniciante', value: 'beginner' },
+  { label: 'Intermediário', value: 'intermediate' },
+  { label: 'Avançado', value: 'advanced' },
+];
+
 export default function Cursos() {
   return (
     <>
@@ -197,14 +224,14 @@ export default function Cursos() {
           {/* Input Nav */}
           <section className="flex flex-col items-center justify-center pb-4 border-b border-black/10 py-6">
             <div className="mx-5 max-w-444">
-              <div className="flex flex-col lg:flex-row items-center justify-center gap-2">
+              <div className="px-5 flex flex-col lg:flex-row items-center justify-center gap-2 w-screen">
                 <div className="w-full">
                   <Input label="" type="search" placeholder="Buscar cursos..." />
                 </div>
-                <div className="w-full flex items-center justify-between">
-                  <Input label="" type="select" placeholder="Categoria" className="mr-2" />
-                  <Input label="" type="select" placeholder="Duração" className="mr-2" />
-                  <Input label="" type="select" placeholder="Nível" />
+                <div className="w-full flex flex-col md:flex-row items-center justify-between gap-2">
+                  <Select name="Categoria" label="" options={searchCategory} />
+                  <Select options={searchLength} label="" name="Duração" />
+                  <Select options={searchLevel} label="" name="Nível" />
                 </div>
               </div>
             </div>
