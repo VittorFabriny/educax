@@ -224,7 +224,7 @@ export default function Cursos() {
           {/* Input Nav */}
           <section className="flex flex-col items-center justify-center pb-4 border-b border-black/10 py-6">
             <div className="mx-5 max-w-444">
-              <div className="px-5 flex flex-col lg:flex-row items-center justify-center gap-2 w-screen">
+              <div className="px-5 lg:px-20 flex flex-col lg:flex-row items-center justify-center gap-2 w-screen">
                 <div className="w-full">
                   <Input label="" type="search" placeholder="Buscar cursos..." />
                 </div>
@@ -248,8 +248,6 @@ export default function Cursos() {
                     ))}
                   </div>
                 </div>
-
-                {/* <Button title="Carregar mais cursos" variant="secondary" className="m-20"/> */}
               </div>
             </div>
           </section>
