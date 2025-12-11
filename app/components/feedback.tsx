@@ -5,7 +5,7 @@ const feedbackData = [
     rating: 5,
     description:
       '"Graças à plataforma consegui um emprego na área de tecnologia em 3 meses. Os cursos são muito práticos e atualizados."',
-    user: 'Ana Silva',
+    user: 'Nelio Alcantara',
     userRole: 'Senior Backend Developer',
     userImageUrl: 'https://avatars.githubusercontent.com/neliocaa',
     classname: 'leading-relaxed',
@@ -14,7 +14,7 @@ const feedbackData = [
     rating: 5,
     description:
       '"A qualidade do ensino é excepcional. Os professores são especialistas e sempre disponíveis para tirar dúvidas."',
-    user: 'Kassio Eduardo',
+    user: 'Kassio Azevedo',
     userRole: 'Senior Fullstack Developer',
     userImageUrl: 'https://avatars.githubusercontent.com/kassiogluten',
   },
