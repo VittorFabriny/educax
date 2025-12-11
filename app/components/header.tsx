@@ -94,7 +94,7 @@ export function Header() {
               ) : null}
 
               {user ? (
-                <div className="w-full absolute bottom-50 overflow-y-hidden">
+                <div className="w-full absolute bottom-60 overflow-y-hidden">
                   <div className="flex flex-col gap-8 text-lg font-medium text-(--color-text-muted)">
                     <Link href="#" className="border-b border-gray-300 pb-2" onClick={logout}>
                       Sair
